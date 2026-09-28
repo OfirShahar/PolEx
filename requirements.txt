@@ -1,0 +1,11 @@
+# PolEx (alignment, scoring and evaluation). Tested with Python 3.10 and the versions below.
+numpy>=1.24,<2
+opencv-python>=4.8
+torch>=2.0
+torchvision>=0.15
+kornia>=0.7
+pandas>=2.0
+pillow>=10.0
+tqdm
+# The extrapolation preprocessing (extrapolate.py) runs in the environment of the
+# CompVis/latent-diffusion repository instead; see the README.

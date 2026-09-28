@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+
+# data, model weights and outputs
+data/
+results/
+*.ckpt
+*.pt
