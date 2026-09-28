@@ -190,6 +190,10 @@ If you use this code or the dataset, please cite:
 }
 ```
 
+## License
+
+The code and the dataset are released for academic research purposes only.
+
 ## Acknowledgments
 
 This work was funded in part by the European Union's Horizon 2020 research and innovation programme under grant agreement No 964854 (the RePAIR project). The extrapolation step builds on [latent-diffusion](https://github.com/CompVis/latent-diffusion) (Rombach et al., CVPR 2022).
