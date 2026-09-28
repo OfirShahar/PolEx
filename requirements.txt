@@ -7,5 +7,5 @@ kornia>=0.7
 pandas>=2.0
 pillow>=10.0
 tqdm
-# The extrapolation preprocessing (extrapolate.py) runs in the environment of the
-# CompVis/latent-diffusion repository instead; see the README.
+# extrapolate.py --method ldm runs in the environment of the CompVis/latent-diffusion
+# repository instead; see the README. The default (--method opencv) runs in this environment.
