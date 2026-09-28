@@ -153,9 +153,30 @@ The metrics (Sec. 5 of the paper) anchor the target fragment at its ground-truth
 - **RMSE(θ)** (↓): the rotation error in degrees. The `rotation_error` column is the absolute angle difference in [0, 360), which is the value reported in the paper's tables. `rotation_error_wrapped` gives min(d, 360 − d).
 - **RMSE(T)** (↓): the distance in pixels between the centroids of the predicted and ground-truth source fragments.
 
-Best-of-top-k selects, for each pair, the candidate with the highest relative position score among the k best-ranked ones.
+Best-of-top-k selects, for each pair, the candidate with the highest relative position score among the k best-ranked ones. Averages are computed over the pairs for which PolEx found at least one admissible candidate; the summary reports how many pairs that is.
 
 The pictorial score samples random patch sizes, so scores (and occasionally rankings) vary slightly between runs. Use `--seed` for repeatable runs.
+
+### Reference results
+
+The table covers the test set (1,520 pairs). For comparison with other methods, it also gives the relative position score over *all* test pairs, with PolEx pairs without candidates scored 0. PolEx RMSE values are over the pairs with candidates. The baselines output a single pose for every pair, and their scores are averaged over all test pairs.
+
+| Method | k | Pairs with candidates | Rel. Pos. ↑ (all pairs) | Rel. Pos. ↑ (pairs with candidates) | RMSE(θ) ↓ | RMSE(T) ↓ |
+|---|---|---|---|---|---|---|
+| RePAIR Greedy | 1 | — | 0.097 | — | 122.66 | 208.28 |
+| RePAIR Genetic | 1 | — | 0.153 | — | 122.08 | 165.15 |
+| ORB Ext. Based | 1 | — | 0.058 | — | 117.31 | 251.09 |
+| SIFT Ext. Based | 1 | — | 0.039 | — | 119.78 | 425.34 |
+| ORB Mixed | 1 | — | 0.048 | — | 119.89 | 350.80 |
+| SIFT Mixed | 1 | — | 0.040 | — | 118.44 | 494.19 |
+| PolEx (`top1`) | 1 | 1,325 | 0.441 | 0.506 | 57.24 | 100.27 |
+| PolEx (`top1`) | 3 | 1,325 | 0.563 | 0.646 | 39.17 | 60.97 |
+| PolEx (`top1`) | 10 | 1,325 | 0.570 | 0.654 | 38.46 | 58.88 |
+| PolEx (`top10`) | 1 | 1,520 | 0.221 | 0.221 | 111.89 | 180.04 |
+| PolEx (`top10`) | 3 | 1,520 | 0.433 | 0.433 | 99.24 | 112.13 |
+| PolEx (`top10`) | 10 | 1,520 | 0.804 | 0.804 | 34.05 | 22.02 |
+
+The baselines are described in the paper. The PolEx results were obtained with the latent diffusion extrapolation (`--method ldm`). Because patch sampling is random, individual runs may differ slightly.
 
 ## Repository structure
 
