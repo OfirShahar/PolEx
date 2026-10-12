@@ -41,7 +41,7 @@ test/
 
 Each CSV row contains `pair_idx`, `puzzle_idx`, `target_piece_idx`, `src_piece_idx`, `target_piece_path` and `src_piece_path` (relative to the split directory), and each fragment's ground-truth pose (`{target,src}_gt_rotation`, `{target,src}_gt_translation_x`, `{target,src}_gt_translation_y`).
 
-To use your own fragments, provide them as RGBA PNGs in which alpha > 0 marks the fragment. The code that generated the dataset's puzzles (Voronoi fragmentation, Perlin-noise erosion and pair extraction) is in [`puzzle_generation/`](puzzle_generation/); see its README for details.
+To use your own fragments, provide them as RGBA PNGs in which alpha > 0 marks the fragment. The code that generated the dataset's puzzles (Voronoi fragmentation, Perlin-noise erosion and pair extraction) is in [`puzzle_generation/`](puzzle_generation/) - which will be added soon; see its README for details.
 
 ## Step 1: Extrapolation (preprocessing)
 
